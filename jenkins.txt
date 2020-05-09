@@ -31,7 +31,7 @@
 1:WalkAbout, WalkAbout.version
 
 # 2:PROJNAME, PROJFILE, VERSIONFILE, PLUGINSFOLDER
-2:WalkAbout,WalkAbout/WalkAbout/WalkAbout.csproj,WalkAbout.version,GameData/WalkAbout/Plugins
+2:WalkAbout,WalkAbout/WalkAbout.csproj,WalkAbout.version,GameData/WalkAbout/Plugins
 
 # 3:SOURCEFILE, DESTDIR
 3:WalkAbout.version,GameData/WalkAbout
