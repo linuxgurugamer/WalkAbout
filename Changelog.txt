@@ -9,3 +9,77 @@ Changelog
 	Removed activation via hotkey for both windows, toolbar button is now used instead
 	Replaced non-functional GUI.Button with 
 	Fixed bug where changing to new vessel wouldn't enable/disable the mod (ie:  switching to a Kerbal from a vessel, mod stayed disabled)
+
+v1.7.1
+  Fixed bug that crashed v1.7 while trying to find KIS modules.
+
+v1.7
+
+  Version 1.7 incorporates a new method for storing locations. This method is incompatible with the previous method. As a result, any custom-made locations (i.e. those stored in the user.loc file) will no longer work and must be recreated using the Add Location Utility (see Adding your own Locations below).
+  Some previously defined locations have been removed. In particular, location within stairwells and walkways were problematic and caused kerbals to appear on top of buildings instead of inside them. Those locations that could not be shifted to reasonably close alternate locations were removed.
+
+  New Features:
+    Works with relocated KSC. Tested with Galileo Planetary Pack and Alien Space Program.
+    Incorporated code by LabRats (http://forum.kerbalspaceprogram.com/index.php?/profile/158208-labrats/) to honour KIS mod's volume settings for items.
+
+v1.6.1
+  Fixed Issues:
+    WA013 Some users are reporting that most (or all) locations are not loading.
+
+v1.6
+  New Features:
+        Added Perpetual Motion mode.
+
+v1.5
+  New Features:
+    Added support for Kerbal Inventory System. Items can be added to the kerbal's inventory before the kerbal is placed.
+
+v1.4
+  Works with KSP version 1.2
+  New Features:
+    Added Extras folder.
+
+  Fixed Issues:
+    WA005 Reloading the KSC scene sometimes results in log-spam: [ERR 16:26:34.891] Serialization depth limit exceeded at 'Contracts.Agents::Agent'. There may be an object composition cycle in one or more of your serialized classes.
+    WA008 When the location is under a structure, the kerbal is generated at high altitude and drops from, or clings to, the structure.
+ 
+v1.3
+  Works with KSP version 1.1
+  New Features:
+    No longer overwrites an existing settings.cfg file when updated.
+
+  Fixed Issues:
+    WA011 User reported nullreference log spam.
+    
+v1.2
+  New Features:
+    Resizable windows.
+    CKAN compatibility.
+
+  Fixed Issues:
+    Fixed locations VAB_Main_E1A and VAB_Main_W1A (were reversed).
+
+v1.1
+  Fixed Issues:
+    WA009 Eliminated NullReferenceException caused by running in normal mode.  
+    WA010 Locations were not moving further up the list when selected.
+
+v1.0
+  Initial Release
+
+v0.0.2
+  Fixed Issues:
+    WA001 Include a ReadMe file.
+    WA004 Require license text.
+    WA007 ReadMe needs description and instructions.
+
+v0.1.0
+  New Features:
+    Buttons indicate status by colour (green=operation can be done, yellow=additional action required).
+    Can limit the locations displayed to a single Facility.
+    Can limit the number of locations displayed using the Top # Only button.
+    AddUtility: Added display of closest known locations.
+    AddUtility: Added location Ids.
+  Fixed Issues:
+    WA002 Added kerbals do not appear on KSC scene until dialogue is re-opened.
+    WA006 Requeueing of locations is not working correctly.
