@@ -1,0 +1,8 @@
+Possible future additions
+
+fixing the integration with KIS - one of main things I created the mod for was to bring out items to resupply/expand existing craft.
+support for the new launch sites and all the different ground stations on Kerbin (get it back up and running, and I can provide the new locations).
+adding inter-building travel time if Kerbal Construction Time is installed; that is adding a delay so Jeb can't enter the admin building and then just pop up at the desert launch site 10 second later.
+adding a "walk towards" capability that would keep a kerbal walking/running towards a particular point. I was trying to figure out how to get around obstacles when things changed and I was not longer able to devote a lot of time.
+support for RSS and other mods that might move the KSC from its original position.
+Of course, you are under n

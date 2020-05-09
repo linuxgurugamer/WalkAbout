@@ -1,0 +1,11 @@
+Changelog
+
+1.8
+	Adoption by Linuxgurugamer
+	Updated for 1.8
+	Added Clickthroughblocker support
+	Added Toobarcontroller support 
+	Added toolbar code for main and add utility
+	Removed activation via hotkey for both windows, toolbar button is now used instead
+	Replaced non-functional GUI.Button with 
+	Fixed bug where changing to new vessel wouldn't enable/disable the mod (ie:  switching to a Kerbal from a vessel, mod stayed disabled)
