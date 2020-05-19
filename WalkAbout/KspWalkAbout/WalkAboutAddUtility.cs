@@ -67,14 +67,13 @@ namespace KspWalkAbout
 
             _config = GetModConfig(); "Add Location utility obtained config".Debug();
             if (_config == null) { return; }
-
             if (!HighLogic.CurrentGame.Parameters.CustomParams<WA>().UtilityMode)
             {
                 "Add Location utility deactivated: not in utility mode".Debug();
                 return;
             }
-
-            $"Add Location utility activated on EVA for {FlightGlobals.ActiveVessel.GetVesselCrew()[0].name}".Debug();
+            if (activeEVA)
+                $"Add Location utility activated on EVA for {FlightGlobals.ActiveVessel.GetVesselCrew()[0].name}".Debug();
 
             _map = GetLocationMap(); "Add Location utility obtained map object".Debug();
             _addUtilityGui = new AddUtilityGui();
@@ -96,10 +95,13 @@ namespace KspWalkAbout
 
         void onVesselChange(Vessel to)
         {
-            Debug.Log("onVesselChange: " + to.vesselName);
+            if (to != null)
+                Debug.Log("onVesselChange: " + to.vesselName);
 
             activeEVA = false;
-            toolbarControl.Enabled = false;
+            if (toolbarControl != null)
+                toolbarControl.Enabled = false;
+            if (_addUtilityGui != null)
             _addUtilityGui.IsActive = false;
 
             if (!(FlightGlobals.ActiveVessel?.isEVA ?? false))
@@ -201,9 +203,12 @@ namespace KspWalkAbout
         void OnDestroy()
         {
             GameEvents.onVesselChange.Remove(onVesselChange);
-            toolbarControl.OnDestroy();
-            Destroy(toolbarControl);
-            toolbarControl = null;
+            if (toolbarControl != null)
+            {
+                toolbarControl.OnDestroy();
+                Destroy(toolbarControl);
+                toolbarControl = null;
+            }
         }
     }
 }

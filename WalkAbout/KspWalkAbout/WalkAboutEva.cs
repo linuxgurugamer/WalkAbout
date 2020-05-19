@@ -23,6 +23,8 @@ using UnityEngine;
 using static KspAccess.CommonKspAccess;
 using static KspWalkAbout.Entities.WalkAboutPersistent;
 
+using KIS;
+
 namespace KspWalkAbout
 {
     /// <summary>
@@ -64,7 +66,7 @@ namespace KspWalkAbout
 
             if (WalkAboutPersistent.AllocatedItems.ContainsKey(kerbalPcm.name))
             {
-                AddInventoryItems(kerbalPcm, KisMod);
+                AddInventoryItems(kerbalPcm); //, KisMod);
             }
             else
             {
@@ -80,13 +82,15 @@ namespace KspWalkAbout
             {
                 return;
             }
-
-            AlterMotionAsPerUserKeystrokes(_currentMotion, _perpetualMotionKeys);
-
-            if (_currentMotion.State != MotionState.normal)
+            if (_currentMotion != null)
             {
-                ChangeHighWarpToPhysicsWarp();
-                MoveKerbal(kerbalEva, _currentMotion);
+                AlterMotionAsPerUserKeystrokes(_currentMotion, _perpetualMotionKeys);
+
+                if (_currentMotion.State != MotionState.normal)
+                {
+                    ChangeHighWarpToPhysicsWarp();
+                    MoveKerbal(kerbalEva, _currentMotion);
+                }
             }
         }
 
@@ -119,25 +123,34 @@ namespace KspWalkAbout
             }
         }
 
-        private void AddInventoryItems(ProtoCrewMember kerbalPcm, System.Reflection.Assembly KIS)
+        private void AddInventoryItems(ProtoCrewMember kerbalPcm) //, System.Reflection.Assembly KIS)
         {
             $"{kerbalPcm.name} has {WalkAboutPersistent.AllocatedItems[kerbalPcm.name].Count} items to be assigned".Debug();
+#if false
             var ModuleKISInventoryType = KIS.GetType("KIS.ModuleKISInventory");
             "found KIS inventory type".Debug();
             var inventory = FlightGlobals.ActiveVessel.GetComponent(ModuleKISInventoryType);
+#endif
+            var moduleKISInventory = FlightGlobals.ActiveVessel.GetComponent<ModuleKISInventory>();
+
             "obtained modules for the active vessel".Debug();
 
-            if (inventory != null)
+            if (moduleKISInventory != null)
             {
                 foreach (var itemName in WalkAboutPersistent.AllocatedItems[kerbalPcm.name])
                 {
-                    AddItemToInventory(kerbalPcm, itemName, ModuleKISInventoryType, inventory);
+                    var part = PartLoader.getPartInfoByName(itemName)?.partPrefab;
+
+                    moduleKISInventory.AddItem(part, 1, -1);
+                        
+                    //AddItemToInventory(kerbalPcm, itemName, ModuleKISInventoryType, inventory);
                 }
             }
 
             WalkAboutPersistent.AllocatedItems.Remove(kerbalPcm.name);
         }
 
+#if false
         private void AddItemToInventory(ProtoCrewMember kerbalPcm, string itemName, System.Type KisType, Component inventory)
         {
             $"{kerbalPcm.name} has a {itemName} to be added".Debug();
@@ -149,6 +162,7 @@ namespace KspWalkAbout
                 return;
             }
 
+
             $"invoking AddItem member using (part [{part.GetType()}])".Debug();
             var item =
                 KisType.InvokeMember(
@@ -159,7 +173,7 @@ namespace KspWalkAbout
                     new object[] { part, 1f, -1 });
             $"{itemName} is in the inventory as {item}".Debug();
         }
-
+#endif
         private bool AreFlightConditionsMet(KerbalEVA kerbalEva)
         {
             return ((kerbalEva != null) // not a kerbal on EVA

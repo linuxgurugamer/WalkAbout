@@ -1,5 +1,8 @@
 Changelog
 
+0.1.8.1
+    Fixed KIS integration
+
 1.8
 	Adoption by Linuxgurugamer
 	Updated for 1.8
@@ -9,6 +12,7 @@ Changelog
 	Removed activation via hotkey for both windows, toolbar button is now used instead
 	Replaced non-functional GUI.Button with 
 	Fixed bug where changing to new vessel wouldn't enable/disable the mod (ie:  switching to a Kerbal from a vessel, mod stayed disabled)
+    Fixed exceptions when launching a vessel and then changing to another in the area
 
 v1.7.1
   Fixed bug that crashed v1.7 while trying to find KIS modules.
