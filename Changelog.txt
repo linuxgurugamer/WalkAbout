@@ -1,5 +1,8 @@
 Changelog
 
+0.1.8.3
+    Fix mistake in .version file
+
 0.1.8.2
     Removed unnecessary lines from config file, replaced by stock Settings page
     Fixed window resizing
