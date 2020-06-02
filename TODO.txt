@@ -6,4 +6,4 @@ adding inter-building travel time if Kerbal Construction Time is installed; that
 adding a "walk towards" capability that would keep a kerbal walking/running towards a particular point. I was trying to figure out how to get around obstacles when things changed and I was not longer able to devote a lot of time.
 support for RSS and other mods that might move the KSC from its original position.
 
-Need to test KIS integration
+Getting Exception 1st time into AddUtilityGui

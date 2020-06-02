@@ -1,7 +1,12 @@
 Changelog
 
+0.1.8.2
+    Removed unnecessary lines from config file, replaced by stock Settings page
+    Fixed window resizing
+
 0.1.8.1
     Fixed KIS integration
+    Fixed legs not moving after using Perpetural Motion
 
 1.8
 	Adoption by Linuxgurugamer
@@ -13,6 +18,7 @@ Changelog
 	Replaced non-functional GUI.Button with 
 	Fixed bug where changing to new vessel wouldn't enable/disable the mod (ie:  switching to a Kerbal from a vessel, mod stayed disabled)
     Fixed exceptions when launching a vessel and then changing to another in the area
+    Added stock setting page
 
 v1.7.1
   Fixed bug that crashed v1.7 while trying to find KIS modules.

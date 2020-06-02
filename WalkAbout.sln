@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalkAbout", "WalkAbout\KspWalkAbout\WalkAbout.csproj", "{68FF2BB0-AD31-49C4-A847-612269617CCE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalkAbout", "KSPWalkAbout\WalkAbout.csproj", "{68FF2BB0-AD31-49C4-A847-612269617CCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalkAboutUnitTesting", "WalkAbout\WalkAboutUnitTesting\WalkAboutUnitTesting.csproj", "{5E95D821-096C-43AA-B448-91C731D1B902}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalkAboutUnitTesting", "WalkAboutUnitTesting\WalkAboutUnitTesting.csproj", "{5E95D821-096C-43AA-B448-91C731D1B902}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLAtoGC", "WalkAbout\LLAtoGC\LLAtoGC.csproj", "{5E0E18A9-D9CD-4AC1-B357-6E8BBAF9BAEC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLAtoGC", "LLAtoGC\LLAtoGC.csproj", "{5E0E18A9-D9CD-4AC1-B357-6E8BBAF9BAEC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{24A51702-7F1F-4DEA-A233-F7E5C7262BE9}"
 	ProjectSection(SolutionItems) = preProject
