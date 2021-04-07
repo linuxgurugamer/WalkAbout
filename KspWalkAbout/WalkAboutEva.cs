@@ -22,6 +22,7 @@ using KspWalkAbout.Values;
 using UnityEngine;
 using static KspAccess.CommonKspAccess;
 using static KspWalkAbout.Entities.WalkAboutPersistent;
+using System.Reflection;
 
 using KIS;
 
@@ -226,7 +227,16 @@ namespace KspWalkAbout
 
             currentAnimation.CrossFade(currentMotion.Animation);
             rigidbody.interpolation = RigidbodyInterpolation.Extrapolate;
+            RemoveRBAnchor(kerbalEva);
             rigidbody.MovePosition(rigidbody.position + deltaPosition);
+        }
+
+        void RemoveRBAnchor(KerbalEVA eva)
+        {
+            MethodInfo removeRBAnchor = typeof(KerbalEVA).GetMethod("RemoveRBAnchor", BindingFlags.NonPublic | BindingFlags.Instance);
+
+            if (removeRBAnchor != null)
+                removeRBAnchor.Invoke(eva, null); //, parametersArray);
         }
 
         private MotionSettings GetNewMotionSettings(KerbalEVA kerbal, MotionSettings currentMotion)

@@ -1,6 +1,6 @@
 {
   "NAME": "WalkAbout",
-  "URL": "https://github.com/linuxgurugamer/WalkAbout/WalkAbout.version",
+  "URL": "http://ksp.spacetux.net/avc/WalkAbout",
   "DOWNLOAD": "https://github.com/linuxgurugamer/WalkAbout/tree/master/Release",
   "GITHUB": {
     "USERNAME": "linuxgurugamer",
@@ -10,7 +10,7 @@
     "MAJOR": 0,
     "MINOR": 1,
     "PATCH": 8,
-    "BUILD": 1
+    "BUILD": 3
   },
   "KSP_VERSION_MIN": {
     "MAJOR": 1,
