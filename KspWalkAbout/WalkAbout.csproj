@@ -45,6 +45,9 @@
     <Reference Include="KIS">
       <HintPath>$(KSPDIR)\GameData\KIS\Plugins\KIS.dll</HintPath>
     </Reference>
+    <Reference Include="KSPDev_Utils.2.4">
+      <HintPath>$(KSPDIR)\GameData\KIS\Plugins\KSPDev_Utils.2.4.dll</HintPath>
+    </Reference>
     <Reference Include="KSP_Log">
       <HintPath>$(KSPDIR)\GameData\SpaceTuxLibrary\Plugins\KSP_Log.dll</HintPath>
     </Reference>
