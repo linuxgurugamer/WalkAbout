@@ -18,6 +18,7 @@
 using System;
 using KspWalkAbout.Values;
 using UnityEngine;
+using static KspWalkAbout.RegisterToolbar;
 
 namespace KspWalkAbout.Extensions
 {
@@ -38,6 +39,7 @@ namespace KspWalkAbout.Extensions
         public static void Log(this string message)
         {
             MonoBehaviour.print($"{Constants.ModName}: {message}");
+            RegisterToolbar.Log.Info(message);
         }
 
         /// <summary>Write the message to the log if the DebugOn flag is set.</summary>
