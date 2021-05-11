@@ -95,7 +95,7 @@ namespace KspWalkAbout
 
         void onVesselChange(Vessel to)
         {
-            if (to != null)
+            if (to != null && to.vesselName != null)
                 Debug.Log("onVesselChange: " + to.vesselName);
 
             activeEVA = false;
