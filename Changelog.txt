@@ -1,5 +1,9 @@
 Changelog
 
+0.1.8.7
+    Added AssemblyFileVersion
+    Updated version file for 1.12
+
 0.1.8.6
     Added check in onVesselChange checking for null vesselName
 
